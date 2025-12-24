@@ -9,9 +9,9 @@ if($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '127.0.0.1')
 } else {
     // Live Server Credentials (EDIT THESE for your Host)
     $host = "localhost";
-    $user = "u12345_username"; // Change to your Live Username
-    $pass = "your_password";   // Change to your Live Password
-    $db   = "u12345_dbname";   // Change to your Live DB Name
+    $user = "root"; // Change to your Live Username
+    $pass = "password";   // Change to your Live Password
+    $db   = "skillgap_db";   // Change to your Live DB Name
 }
 
 try {
