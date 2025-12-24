@@ -1,0 +1,12 @@
+# Database credentials (keep local and live separate)
+includes/db.php
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+debug_log.txt
+
+# Editor directories
+.vscode/
+.idea/
