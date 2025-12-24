@@ -1,17 +1,27 @@
 <?php
-// Database Configuration (Auto-Detects Environment)
-if($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '127.0.0.1') {
-    // Localhost Credentials (XAMPP)
+// Database Configuration
+// Priority 1: Environment Variables (Railway / Cloud)
+if (getenv('MYSQLHOST')) {
+    $host = getenv('MYSQLHOST');
+    $user = getenv('MYSQLUSER');
+    $pass = getenv('MYSQLPASSWORD');
+    $db   = getenv('MYSQLDATABASE');
+    $port = getenv('MYSQLPORT');
+    $host .= ":" . $port; // Append port if using non-standard
+} 
+// Priority 2: Localhost (XAMPP)
+elseif ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '127.0.0.1') {
     $host = "localhost";
     $user = "root";
     $pass = "";
     $db = "skillgap_db";
-} else {
-    // Live Server Credentials (EDIT THESE for your Host)
+} 
+// Priority 3: Fallback / Manual
+else {
     $host = "localhost";
-    $user = "root"; // Change to your Live Username
-    $pass = "password";   // Change to your Live Password
-    $db   = "skillgap_db";   // Change to your Live DB Name
+    $user = "root";
+    $pass = "password";
+    $db   = "skillgap_db";
 }
 
 try {
