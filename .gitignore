@@ -1,5 +1,5 @@
 # Database credentials (keep local and live separate)
-includes/db.php
+# includes/db.php
 
 # System files
 .DS_Store
